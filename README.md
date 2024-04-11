@@ -1,11 +1,23 @@
-# Prepare the pi
+# "Offline" Multiplayer Quake Server
+
+This project combines QuakeJS,  a JavaScript quake client with the help of Emscripten, with a Raspberry Pi to create a devices that will allow multiple people to participate in a Quake 3 Arena death match without the use of the internet.  This can be used in places where there is no interent access like camping, a plane or even a boat.
+
+Raspberry Pi acts as an Access Point. All traffic of any computer that connects to this PI is redirected back to the PI createing an unsolvable captive portal.  Instead of a login page, you play Quake!
+
+The Raspberry pi runs 3 services:
+- **Quake client**: HTTP Client that allows users to connect to it, download the QuakeJS client locally and connect to the server  
+- **Content Server**: A place that holds all the assets required to play the maps.  The quake client connects to this to download  
+- **Quake Server**: The multiplayer service required to play a death match  
+
 
 ## Requirements
 
 - Raspbery Pi 3 or better
-- 8 GB or bigger SD card
+- 8 GB or bigger SD card (Faster the better)
 - Network cable
 - Connection to a network that supports DHCP
+
+## Prepare the OS
 
 1) Download, install and start the Raspberry Pi Imager
 
@@ -46,7 +58,7 @@ https://www.raspberrypi.com/software/
 IE:  
 `ssh pi@raspberrypi.local`  
 
-## Configuring the pi to be a Q3 server
+## Configuring the PI to be a Q3 server
 
 1) Install some basic dependencies
 
