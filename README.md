@@ -293,13 +293,13 @@ fi
 screen -dmS qserver /opt/q3/quakejs-master/qs.sh
 screen -dmS qclient /opt/q3/quakejs-master/qc.sh
 screen -dmS qcontent /opt/q3/quakejs-master/qcon.sh
-iptables -t nat -A PREROUTING -i wlan-ap -p tcp -d 10.0.0.1 -j ACCEPT
+iptables -t nat -A PREROUTING -i wlan0 -p tcp -d 10.0.0.1 -j ACCEPT
 
 # Enable captive portal like redicrect
-iptables -t nat -A PREROUTING -i wlan-ap -p tcp -m tcp --dport 53 -j REDIRECT --to-port 53
-iptables -t nat -A PREROUTING -i wlan-ap -p tcp -m tcp --dport 53 -j REDIRECT --to-port 53
-iptables -t nat -A PREROUTING -i wlan-ap -p tcp -m tcp --dport 80 -j REDIRECT --to-port 80
-iptables -t nat -A PREROUTING -i wlan-ap -p tcp -m tcp --dport 443 -j REDIRECT --to-port 443
+iptables -t nat -A PREROUTING -i wlan0 -p tcp -m tcp --dport 53 -j REDIRECT --to-port 53
+iptables -t nat -A PREROUTING -i wlan0 -p tcp -m tcp --dport 53 -j REDIRECT --to-port 53
+iptables -t nat -A PREROUTING -i wlan0 -p tcp -m tcp --dport 80 -j REDIRECT --to-port 80
+iptables -t nat -A PREROUTING -i wlan0 -p tcp -m tcp --dport 443 -j REDIRECT --to-port 443
 EOF
 chmod +x /etc/rc.local
 ```
