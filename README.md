@@ -29,7 +29,7 @@ https://www.raspberrypi.com/software/
   - Raspbery Pi OS (other)
   - Raspberry Pi OS Lite 64 Bit
 - Select your storage  
-- Select Next
+- Select Next  
 ![alt text](rpi-1.png)
 
 3) Edit settings
@@ -80,7 +80,7 @@ apt-get install nodejs -y
 
 
 2) Install Quake compiled for a web client  
-***For Refrence, source report at https://github.com/inolen/quakejs.git***
+*For Refrence, source repo at https://github.com/inolen/quakejs.git*
 
 ```
 cd /opt/q3
