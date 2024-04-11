@@ -24,15 +24,15 @@ https://www.raspberrypi.com/software/
 - Click Edit Settings  
 ![alt text](image.png)  
 - Check mark "set username and password"  
-- Enter a username and password
+- Enter a username and password  
 ![alt text](image-1.png)
-- Click Services
-- Check Enable SSH
+- Click Services  
+- Check Enable SSH  
 ![alt text](image-2.png)
-- Click Save
-- Click Yes
+- Click Save  
+- Click Yes  
 ![alt text](image-3.png)
-- Confirm erasing mass storage device
+- Confirm erasing mass storage device  
 
 3) Boot the raspberry pi with the newly formats SD card
 4) Connect the raspberry pi to your network using the network cable
@@ -68,7 +68,7 @@ apt-get install nodejs -y
 
 
 2) Install Quake compiled for a web client  
-Source: https://github.com/inolen/quakejs.git
+***For Refrence, source report at https://github.com/inolen/quakejs.git***
 
 ```
 cd /opt/q3
@@ -182,11 +182,7 @@ iface wlan0 inet6 static
 EOF
 ```
 
-Specify Country
-```
-raspi-config nonint do_wifi_country US
-```
-Configure wifi access point
+Configure WiFi access point
 ```
 sudo apt-get install hostapd iptables -y
 cat <<"EOF"> /etc/hostapd/hostapd.conf
@@ -273,6 +269,7 @@ address=/#/10.0.0.1
 EOF
 
 12) Configure everythign to start on boot
+```
 cat <<"EOF"> /etc/rc.local
 #!/bin/bash
 _IP=$(hostname -I) || true
